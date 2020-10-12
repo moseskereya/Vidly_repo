@@ -1,0 +1,24 @@
+﻿@model Vidly.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h4 class="text-center m-4">@Model.Title</h4>
+
+<div class="row">
+    <div class="col-md-6">
+        <img class="img-thumbnail img_crafts" src="@Model.Image" alt="@Model.Title" />
+    </div>
+    <div class="col-md-6">
+        <div class="m-2">
+            <h5>@Model.Title</h5>
+            <p>Maker | @Model.Maker</p>
+            <p>Description | @Model.Description</p>
+            <p>
+                <a href="@Model.Url">Check more here</a></p>
+            <br />
+            <a asp-controller="Products" asp-action="index">Back</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿@model Vidly.Models.Movie
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Model.Title</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <img class="img-thumbnail" src="/Images/@Model.Img" alt="@Model.Title" />
+    </div>
+    <div class="col-md-6">
+        <div class="m-2">
+            <h5>@Model.Title</h5>
+            <p>@Model.Price.ToString("c")</p>
+            <p>@Model.Description</p>
+             <p>Genre @Model.Genre</p>
+            <br />
+            <p>@Model.ReleaseDate</p>
+
+            <a asp-controller="movies" asp-action="index">Back</a>
+        </div>
+    </div>
+</div>

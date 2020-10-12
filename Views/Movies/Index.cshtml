@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Vidly.Models.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+    <div class="jumbotron text-center">
+        <h1>Movies</h1>
+    </div>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+    <div class="col-md-4">
+        <a asp-controller="Movies" asp-action="Details" asp-route-id="@item.Id">
+            <img class="img-thumbnail" src="~/Images/@item.Img" alt="@item.Title" />
+        </a>
+        <div class="movie_preview">
+            <h5>@item.Price.ToString("c")</h5>
+            <h5>
+                @item.Title
+            </h5>
+        </div>
+    </div>
+    }
+         
+</div>
